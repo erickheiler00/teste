@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import teste2Routes from './teste2.js'
+import livroRoutes from './livro.js'
 
 //const express = require("express");
 //const router = express.Router();
@@ -11,7 +11,7 @@ routes.get('/', (req, res) => {
     res.send('Hello World')
 })
 
-routes.use('/teste', teste2Routes)
+routes.use('/livro', livroRoutes)
 
 //module.exports = router;
 export default routes
