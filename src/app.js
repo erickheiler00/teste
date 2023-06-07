@@ -4,25 +4,33 @@ import routes from './routes/index.js'
 //import Home from './controller/Home.js'
 import AppController from './controller/App.js'
 
+// configuração do express
+
 // importando modulo express
 //const express = require('express')
 const app = express()
 
 // CORS
 // adicionar cabeçalho de liberação de origem
-//const cors = require('cors')
+// const cors = require('cors')
+// permite que o servidor responda a requisições de diferentes origens 
 
-app.use(express.json());
+// avisar quais tipos de body a aplicação aceita:
+app.use(express.json()); // adiciona o middleware express.json()
 // urlencoded: analisa os dados enviados em um formato de formulário HTML a partir de uma solicitação HTTP
-app.use(express.urlencoded({extended: true})) // garante que o middleware urlencoded seja aplicado a todas as rotas
-app.use(cors()) 
+app.use(express.urlencoded({extended: true})) // garante que o middleware urlencoded seja aplicado a todas as rotas, por exemplo POST
 
-app.use(routes)
+app.use(cors()) // adiciona o middleware cors()
+
+app.use(routes) // adciciona o middleware routes
+
 //app.get('/', Home.index)
-app.use(AppController.notFound)
+
+// adiciona os middlewares notFound e gerenciaErro do AppController
+app.use(AppController.notFound) 
 app.use(AppController.gerenciaErro)
 
-export default app
+export default app // permite que outros arquivos importem o objeto app
 
 /*
 app.listen(3000, () => {
