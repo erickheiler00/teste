@@ -40,6 +40,7 @@ const Livro = {
 }
 
 // criando um novo registro de livro
+/*
 const data = {
     "autor" : "desconhecido",
     "editora" : "desconhecida",
@@ -48,5 +49,6 @@ const data = {
     "genero" : "Conto"
 }
 Livro.create(data)
+*/
 
 export default Livro

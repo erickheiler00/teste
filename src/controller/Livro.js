@@ -23,7 +23,7 @@ const Livro = {
         models.byId(req.params.id) // obter o valor do parametro id passado na URL
             .then(gerenciaNotFound) // gerenciaNotFound é aplicada ao resultado obtido
                                     // verifica se o livro existe ou não
-            .then(result => response.json(result))
+            .then(result => res.json(result))
             .catch(next)   
     },
 
@@ -45,7 +45,7 @@ const Livro = {
     // chamada quando a rota para excluir um livro por ID é chamada
     deleteById(req, res, next) {
         models.deleteById(req.params.id) // exclui o registro do livro com base no ID fornecido
-            .then(_ => response.sendStatus(204)) // status de OK quando é delete
+            .then(_ => res.sendStatus(204)) // status de OK quando é delete
             .catch(next)
     }
 }
