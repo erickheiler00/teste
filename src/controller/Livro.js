@@ -42,7 +42,7 @@ const Livro = {
             .catch(next)
     },
 
-    // chamada quando a rota para excluir um livro por ID é chamada
+    // chamada quando a rota para excluir um livro por ID é acessada
     deleteById(req, res, next) {
         models.deleteById(req.params.id) // exclui o registro do livro com base no ID fornecido
             .then(_ => res.sendStatus(204)) // status de OK quando é delete
